@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en" class="wf-rubik-n5-active wf-rubik-n4-active wf-rubik-n7-active wf-inter-n8-active wf-inter-n6-active wf-active">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Laravel">
+        <link
+            rel="shortcut icon"
+            href="./Image/Logo/Logo_Bappeda.png"
+            type="image/x-icon">
+        <link
+            rel="icon"
+            href="./Image/Logo/Logo_Bappeda.png"
+            type="image/x-icon">
+        <meta
+            name="description"
+            content="Badan Perencanaan Pembangunan Daerah">
+        <meta name="author" content="">
+        <title>Badan Perencanaan Pembangunan Daerah
+        </title>
+        <link href="CSS/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="CSS/main.css" rel="stylesheet" type="text/css">
+        <link href="CSS/all.min.css" rel="stylesheet" type="text/css">
+        <link href="CSS/sweetalert2.min.css" rel="stylesheet" type="text/css">
+        <link href="CSS/swiper-bundle.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="CSS/css.css" media="all">
+        <link href="CSS/leaflet.min.css" rel="stylesheet">
+        <style class="fslightbox-styles">
+            .fslightbox-absoluted {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .fslightbox-fade-in {
+                animation: fslightbox-fade-in 0.3s cubic-bezier(0,0,.7,1);
+            }
+            .fslightbox-fade-out {
+                animation: fslightbox-fade-out 0.3s ease;
+            }
+            .fslightbox-fade-in-strong {
+                animation: fslightbox-fade-in-strong 0.3s cubic-bezier(0,0,.7,1);
+            }
+            .fslightbox-fade-out-strong {
+                animation: fslightbox-fade-out-strong 0.3s ease;
+            }
+            @keyframes fslightbox-fade-in {
+                from {
+                    opacity: 0.65;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            @keyframes fslightbox-fade-out {
+                from {
+                    opacity: 0.35;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+            @keyframes fslightbox-fade-in-strong {
+                from {
+                    opacity: 0.3;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            @keyframes fslightbox-fade-out-strong {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+            .fslightbox-cursor-grabbing {
+                cursor: grabbing;
+            }
+            .fslightbox-full-dimension {
+                width: 100%;
+                height: 100%;
+            }
+            .fslightbox-open {
+                overflow: hidden;
+                height: 100%;
+            }
+            .fslightbox-flex-centered {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .fslightbox-opacity-0 {
+                opacity: 0!important;
+            }
+            .fslightbox-opacity-1 {
+                opacity: 1!important;
+            }
+            .fslightbox-scrollbarfix {
+                padding-right: 17px;
+            }
+            .fslightbox-transform-transition {
+                transition: transform 0.3s;
+            }
+            .fslightbox-container {
+                font-family: Arial,sans-serif;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background: linear-gradient(rgba(30,30,30,.9),#000 1810%);
+                touch-action: pinch-zoom;
+                z-index: 1000000000;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-tap-highlight-color: transparent;
+            }
+            .fslightbox-container * {
+                box-sizing: border-box;
+            }
+            .fslightbox-svg-path {
+                transition: fill 0.15s ease;
+                fill: #ddd;
+            }
+            .fslightbox-nav {
+                height: 45px;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .fslightbox-slide-number-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                height: 100%;
+                font-size: 15px;
+                color: #d7d7d7;
+                z-index: 0;
+                max-width: 55px;
+                text-align: left;
+            }
+            .fslightbox-slide-number-container .fslightbox-flex-centered {
+                height: 100%;
+            }
+            .fslightbox-slash {
+                display: block;
+                margin: 0 5px;
+                width: 1px;
+                height: 12px;
+                transform: rotate(15deg);
+                background: #fff;
+            }
+            .fslightbox-toolbar {
+                position: absolute;
+                z-index: 3;
+                right: 0;
+                top: 0;
+                height: 100%;
+                display: flex;
+                background: rgba(35,35,35,.65);
+            }
+            .fslightbox-toolbar-button {
+                height: 100%;
+                width: 45px;
+                cursor: pointer;
+            }
+            .fslightbox-toolbar-button:hover .fslightbox-svg-path {
+                fill: #fff;
+            }
+            .fslightbox-slide-btn-container {
+                display: flex;
+                align-items: center;
+                padding: 12px 12px 12px 6px;
+                position: absolute;
+                top: 50%;
+                cursor: pointer;
+                z-index: 3;
+                transform: translateY(-50%);
+            }
+            @media (min-width:476px) {
+                .fslightbox-slide-btn-container {
+                    padding: 22px 22px 22px 6px;
+                }
+            }
+            @media (min-width:768px) {
+                .fslightbox-slide-btn-container {
+                    padding: 30px 30px 30px 6px;
+                }
+            }
+            .fslightbox-slide-btn-container:hover .fslightbox-svg-path {
+                fill: #f1f1f1;
+            }
+            .fslightbox-slide-btn {
+                padding: 9px;
+                font-size: 26px;
+                background: rgba(35,35,35,.65);
+            }
+            @media (min-width:768px) {
+                .fslightbox-slide-btn {
+                    padding: 10px;
+                }
+            }
+            @media (min-width:1600px) {
+                .fslightbox-slide-btn {
+                    padding: 11px;
+                }
+            }
+            .fslightbox-slide-btn-container-previous {
+                left: 0;
+            }
+            @media (max-width:475.99px) {
+                .fslightbox-slide-btn-container-previous {
+                    padding-left: 3px;
+                }
+            }
+            .fslightbox-slide-btn-container-next {
+                right: 0;
+                padding-left: 12px;
+                padding-right: 3px;
+            }
+            @media (min-width:476px) {
+                .fslightbox-slide-btn-container-next {
+                    padding-left: 22px;
+                }
+            }
+            @media (min-width:768px) {
+                .fslightbox-slide-btn-container-next {
+                    padding-left: 30px;
+                }
+            }
+            @media (min-width:476px) {
+                .fslightbox-slide-btn-container-next {
+                    padding-right: 6px;
+                }
+            }
+            .fslightbox-down-event-detector {
+                position: absolute;
+                z-index: 1;
+            }
+            .fslightbox-slide-swiping-hoverer {
+                z-index: 4;
+            }
+            .fslightbox-invalid-file-wrapper {
+                font-size: 22px;
+                color: #eaebeb;
+                margin: auto;
+            }
+            .fslightbox-video {
+                object-fit: cover;
+            }
+            .fslightbox-youtube-iframe {
+                border: 0;
+            }
+            .fslightbox-loader {
+                display: block;
+                margin: auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 67px;
+                height: 67px;
+            }
+            .fslightbox-loader div {
+                box-sizing: border-box;
+                display: block;
+                position: absolute;
+                width: 54px;
+                height: 54px;
+                margin: 6px;
+                border: 5px solid;
+                border-color: #999 transparent transparent transparent;
+                border-radius: 50%;
+                animation: fslightbox-loader 1.2s cubic-bezier(.5,0,.5,1) infinite;
+            }
+            .fslightbox-loader div:nth-child(1) {
+                animation-delay: -.45s;
+            }
+            .fslightbox-loader div:nth-child(2) {
+                animation-delay: -.3s;
+            }
+            .fslightbox-loader div:nth-child(3) {
+                animation-delay: -.15s;
+            }
+            @keyframes fslightbox-loader {
+                0% {
+                    transform: rotate(0);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+            .fslightbox-source {
+                position: relative;
+                z-index: 2;
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-theme-navbar">
+                    <div class="container-lg">
+                        <img src="./Image/Logo/Logo_Bappeda.png" style="width: 50px;height:50px;">
+                        <a class="navbar-brand text-fat text-sm" href="Index.html">
+                            BADAN PERENCANAAN<br>PEMBANGUNAN DAERAH
+                        </a>
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarCollapse"
+                            aria-controls="navbarCollapse"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                            <div id="">
+                                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active text-average text-lg" href="Index.html">Beranda</a>
+                                    </li>
+                                    <li class="nav-item dropdown text-average text-lg">
+                                        <a
+                                            class="nav-link active dropdown-toggle"
+                                            href="https://otda.kemendagri.go.id/#"
+                                            id="navbarDropdownMenuLink"
+                                            role="button"
+                                            data-bs-toggle="dropdown"
+                                            aria-expanded="false">Profil</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <li>
+                                                <a class="dropdown-item" href="Profil Pimpinan.html">Profil Pimpinan</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    class="dropdown-item"
+                                                    href="Struktur Organisasi.html">Struktur Organisasi</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    class="dropdown-item"
+                                                    href="Visi, Misi, Tujuan Dan Sasaran Strategis.html">Visi, Misi, Tujuan Dan Sasaran Strategis</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="Tugas dan Fungsi.html">Tugas Dan Fungsi</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a
+                                            class="nav-link active text-average text-lg"
+                                            href="Berita.html">Berita</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a
+                                            class="nav-link active text-average text-lg"
+                                            href="Daftar Informasi Publik.html">Informasi Publik</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a
+                                            class="nav-link active text-average text-lg"
+                                            href="Dokumentasi Publikasi.html">Publikasi</a>
+                                    </li>
+                                    <li class="nav-item dropdown text-average text-lg">
+                                        <a
+                                            class="nav-link active dropdown-toggle"
+                                            href="https://otda.kemendagri.go.id/#"
+                                            id="navbarDropdownMenuLink"
+                                            role="button"
+                                            data-bs-toggle="dropdown"
+                                            aria-expanded="false">Layanan</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <li>
+                                                <a class="dropdown-item" href="https://litbang.kemendagri.go.id" target="_blank">Kemendagri</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://krisna.systems/renjakl/2023/home-jumper" target="_blank">KRISNA</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="http://asb-papuabarat.psekp.id/index.php/system/Portal/index/#">ASB</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://saikplus.papuabaratprov.go.id/" target="_blank">SAIK +</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://bappeda.papuabaratprov.go.id/e-planning/" target="_blank">E-Planning</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    class="dropdown-item"
+                                                    href="https://egovernment.papuabaratprov.go.id/landing//"
+                                                    target="_blank">SIMAS</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown text-average text-lg">
+                                        <a
+                                            class="nav-link active dropdown-toggle"
+                                            href="https://otda.kemendagri.go.id/#"
+                                            id="navbarDropdownMenuLink"
+                                            role="button"
+                                            data-bs-toggle="dropdown"
+                                            aria-expanded="false">Media</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <li>
+                                                <a class="dropdown-item" href="Galeri.html" target="_blank">Galeri</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://sorongkota.go.id/" target="_blank">Website Sorong</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <form class="d-flex">
+                                <div class="input-group"><input
+                                    id="pencarian-halaman"
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Pencarian"
+                                    aria-label="Pencarian"
+                                    aria-describedby="button-addon2">
+                                    <button
+                                        onclick="searchPage()"
+                                        class="btn btn-outline-secondary bg-white btn-navbar-search"
+                                        type="button"
+                                        id="button-addon2">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>
+                            <div id="menu_event"></div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div
+                class="modal fade"
+                id="modalEvent"
+                tabindex="-1"
+                aria-labelledby="modalEventLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-fat" id="modalEventLabel">Informasi Event</h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-lg text-average">
+                            <div class="col-lg-12 text-center"><img
+                                class="img-fluid"
+                                id="event-preview"
+                                src="./Image/Logo/no-event.png"><br><br>
+                                <span class="ms-2 text-title" id="event-title">Tidak ada Event</span>
+                            </div>
+                            <hr>
+                            <b>Deskripsi:</b><br>
+                            <p id="event-desc" class="text-thin text-sm" style="white-space: pre-line">Mohon maaf saat ini sedang tidak ada event!
+                            </p>
+                            <b>Link:
+                            </b>
+                            <span class="text-thin text-sm ms-2" id="event-link">-</span>
+                            <br></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div id="">
+                <div
+                    id="myCarousel"
+                    class="carousel slide d-none d-lg-block"
+                    data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button
+                            type="button"
+                            data-bs-target="#myCarousel"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Slide 1"></button>
+                        <button
+                            type="button"
+                            data-bs-target="#myCarousel"
+                            data-bs-slide-to="1"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Slide 2"></button>
+                        <button
+                            type="button"
+                            data-bs-target="#myCarousel"
+                            data-bs-slide-to="2"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Slide 3"></button>
+                        <button
+                            type="button"
+                            data-bs-target="#myCarousel"
+                            data-bs-slide-to="3"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Slide 4"></button>
+                        <button
+                            type="button"
+                            data-bs-target="#myCarousel"
+                            data-bs-slide-to="4"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Slide 5"></button>
+                        <button
+                            type="button"
+                            data-bs-target="#myCarousel"
+                            data-bs-slide-to="5"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Slide 6"></button>
+                        <button
+                            type="button"
+                            data-bs-target="#myCarousel"
+                            data-bs-slide-to="6"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Slide 7"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="Image/News/Berita_Beranda3.jpg">
+                            <div class="container"></div>
+                        </div>
+                        <div class="carousel-item ">
+                            <img class="bd-placeholder-img" src="Image/News/Berita_Beranda2.jpg">
+                            <div class="container"></div>
+                        </div>
+                        <div class="carousel-item ">
+                            <img class="bd-placeholder-img" src="Image/News/Berita_Beranda.jpg">
+                            <div class="container"></div>
+                        </div>
+                        <div class="carousel-item ">
+                            <img class="bd-placeholder-img" src="Image/News/Berita_Beranda4.jpg">
+                            <div class="container"></div>
+                        </div>
+                        <div class="carousel-item ">
+                            <img class="bd-placeholder-img" src="Image/News/Berita_Beranda6.jpg">
+                            <div class="container"></div>
+                        </div>
+                    </div>
+                    <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#myCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#myCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="container">
+                <div class="featurette-divider">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h3 class="text-fat" style="font-size: 64px;">Layanan</h3>
+                            <p class="text-subtitle text-thin mt-4">Beberapa layanan yang ada di Direktorat Jenderal Otonomi Daerah</p>
+                            <div class="row">
+                                <ul class="brands">
+                                    <a
+                                        class="pt-2 pb-2"
+                                        href="https://litbang.kemendagri.go.id/"
+                                        target="_blank"
+                                        title="Kemendagri">
+                                        <img src="./Image/Logo/kemendagri.png" alt="Kemendagri"></a>
+                                </li>
+                                <li class="brands__item">
+                                    <a
+                                        href="https://krisna.systems/renjakl/2023/home-jumper"
+                                        target="_blank"
+                                        title="Krisna">
+                                        <img src="./Image/Logo/logo-krisna.png" alt="Krisna"></a>
+                                </li>
+                                <li class="brands__item">
+                                    <a
+                                        href="http://asb-papuabarat.psekp.id/index.php/system/Portal/index/#"
+                                        title="ASB">
+                                        <img src="./Image/Logo/Logo-asb.PNG" alt="ASB"></a>
+                                </li>
+                                <li class="brands__item">
+                                    <a href="https://saikplus.papuabaratprov.go.id//" target="_blank" title="SAIK">
+                                        <img src="./Image/Logo/logo-saik.png" alt="SAIK"></a>
+                                </li>
+                                <li class="brands__item">
+                                    <a href="https://bappeda.papuabaratprov.go.id/e-planning/"
+                                    target="_blank"
+                                    title="e-planning">
+                                    <img src="./Image/Logo/logo-e-planning.png" alt="e-planning"></a>
+                                </li>
+                                <li class="brands__item">
+                                    <a
+                                        href="https://egovernment.papuabaratprov.go.id/landing//"
+                                        target="_blank"
+                                        title="SIMAS">
+                                        <img src="./Image/Logo/logo-simas.png" alt="SIMAS"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="featurette-divider">
+            <div class="text-hr-title">
+                <span class="text-fat text-bold" style="font-size: 36px">Berita</span>
+                <span class="text-thin" style="font-size: 36px">Terbaru</span>
+            </div>
+            <div class="text-hr-line">&nbsp;
+            </div>
+        </div>
+        <div class="row featurette">
+            <div class="col-md-7 order-md-1 mb-4">
+                <div class="img-container">
+                    <a href="https://www.youtube.com/watch?v=EmSifHekEMs">
+                        <img class="img-fluid" src="./Image/Photo/Gallery3.jpeg" alt="Kepala Bappeda Papua Barat pimpin Tim Percepatan Pembangunan Kabupaten Sorong"></a>
+                    <div class="content">
+                        <h3 class="text-title text-fat">
+                            <a
+                                class="feature-link" href="https://www.youtube.com/watch?v=EmSifHekEMs">Pelatihan Penyusunan SKP Bappeda Provinsi Papua Barat</a>
+                        </h3>
+                            <span class="text-lg text-fat ms-2">
+                                <a
+                                    class="text-white"
+                                    href="https://www.youtube.com/watch?v=EmSifHekEMs">Selengkapnya</a>
+                            </span>
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 order-md-2">
+                <div class="d-flex mb-4">
+                    <div class="flex-shrink-0">
+                        <a
+                            href="https://diskominfoperstatik.papuabaratprov.go.id/home/2022/09/12/kepala-bappeda-papua-barat-lapor-progres-penanganan-banjir-kota-sorong-kepada-gubernur-akui-masalah-terurai/">
+                            <img
+                                class="img-post"
+                                src="./Image/News/Berita_Beranda3.jpg"
+                                alt="Kepala Bappeda Papua Barat Lapor Progres"></a>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <span class="text-subtitle text-average">
+                            <a
+                                class="post-link"
+                                href="https://diskominfoperstatik.papuabaratprov.go.id/home/2022/09/12/kepala-bappeda-papua-barat-lapor-progres-penanganan-banjir-kota-sorong-kepada-gubernur-akui-masalah-terurai/">Kepala
+                                Kepala Bappeda Papua Barat pimpin Tim Percepatan Pembangunan Kabupaten Sorong</a>
+                        </span>
+                        <br>
+                        <span class="text-sm text-thin">Rabu, 31 Agustus 2022 5:00 WIB</span>
+                        <br>
+                        <p class="text-thin text-lg mt-1">Manokwari (ANTARA) - Penjabat Gubernur Papua Barat Paulus Waterpauw menunjuk Kepala Badan Perencanaan Pembangunan Daerah (Bappeda) Papua Barat Dance Sangkek sebagai..</p>
+                    </div>
+                </div>
+                <div class="d-flex mb-4">
+                    <div class="flex-shrink-0">
+                        <a
+                            href="https://papuabarat.antaranews.com/berita/24727/bappeda-kota-sorong-jadi-kantor-sementara-pj-gubernur-pbd">
+                            <img
+                                class="img-post"
+                                src="./Image/News/Berita_Beranda2.jpg"
+                                alt="Bappeda Kota Sorong Jadi Kantor Sementara">
+                        </a>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <span class="text-subtitle text-average">
+                            <a
+                                class="post-link"
+                                href="https://papuabarat.antaranews.com/berita/24727/bappeda-kota-sorong-jadi-kantor-sementara-pj-gubernur-pbd">
+                                Bappeda Kota Sorong jadi kantor sementara Pj Gubernur PBD
+                            </a>
+                        </span>
+                        <br>
+                        <span class="text-sm text-thin">Sabtu, 10 Desember 2022 5:17 WIB</span>
+                        <br>
+                        <p class="text-thin text-lg mt-1">
+                            Kepala Bappeda Papua Barat Minta Petunjuk Gubernur Finalisasi Pemetaan 5 Bidang
+                            Saat Raker di Kota Sorong
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex mb-4">
+                    <div class="flex-shrink-0">
+                        <a
+                            href="https://sda.pu.go.id/balai/bwspapuabarat/berita/view/15258/persiapan-perencanaan-pembangunan-bendungan-warsamson-kepala-bws-pb-mengikuti-rapat-bersama-opd">
+                            <img
+                                class="img-post"
+                                src="./Image/News/Berita_Beranda4.jpg"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <span class="text-subtitle text-average">
+                            <a
+                                class="post-link"
+                                href="https://sda.pu.go.id/balai/bwspapuabarat/berita/view/15258/persiapan-perencanaan-pembangunan-bendungan-warsamson-kepala-bws-pb-mengikuti-rapat-bersama-opd">Sorong
+                                (ANTARA) - Kantor kerja sementara Penjabat Gubernur Papua Barat Daya Muhammad
+                                Musa'ad menggunakan gedung..
+                            </a>
+                        </span>
+                        <br>
+                        <span class="text-sm text-thin">Rabu, 08 Desember 2021, Dilihat 966 kali
+                        </span>
+                        <br>
+                        <p class="text-thin text-lg mt-1">sda.pu.go.id dalam rangka mempersiakan
+                            perencanaan pembangunan Bendungan Warsamson,
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex mb-4">
+                    <div class="flex-shrink-0">
+                        <a
+                            href="https://diskominfoperstatik.papuabaratprov.go.id/home/2022/10/16/kepala-bappeda-papua-barat-minta-petunjuk-gubernur-finalisasi-pemetaan-5-bidang-saat-raker-di-kota-sorong/">
+                            <img
+                                class="img-post"
+                                src="./Image/News/Berita_Beranda6.jpg"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <span class="text-subtitle text-average">
+                            <a
+                                class="post-link"
+                                href="https://diskominfoperstatik.papuabaratprov.go.id/home/2022/10/16/kepala-bappeda-papua-barat-minta-petunjuk-gubernur-finalisasi-pemetaan-5-bidang-saat-raker-di-kota-sorong/">Persiapan
+                                Pembukaan Sidang Musyawarah Adat Suku Moi Kab. Sorong Tahun 2022
+                            </a>
+                        </span>
+                        <br>
+                        <span class="text-sm text-thin">17 SEP 2022
+                        </span>
+                        <br>
+                        <p class="text-thin text-lg mt-1">sorongkab.go.id
+                            Bertempat di Aula Kantor Dewan Adat Kampung Osok Malatali, PJ Bupati Sorong Yan Piet Moso S.Sos.,M.M membuka Kegiatan Sidang Musyawarah Adat Suku Moi Kab. Sorong Tahun 2022..</p>
+                    </div>
+                </div>
+                <div class="d-grid mb-4">
+                    <a
+                        href="Berita.html"
+                        class="btn btn-outline-primary text-lg">Lihat Semua Berita</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-theme placer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <blockquote class="blockquote">
+                        <p class="text-subtitle text-thin">
+                            <i class="fa-solid fa-quote-left fa-5x mr-5"></i>
+                            Bappeda merupakan unsur perencanaan pembangunan pemerintahan daerah, Bappeda
+                            dipimpin oleh seorang Kepala Badan yang berkedudukan di bawah dan bertanggung
+                            jawab kepada Gubernur melalui Sekretaris Daerah, dan dalam melaksanakan tugasnya
+                            Kepala Badan dibantu oleh seorang Wakil Kepala Badan.
+                            <br>
+                            <br>Badan Perencanaan Pembangunan Daerah mempunyai tugas pokok merencanakan,
+                                menetapkan, menyelenggarakan, mengkoordinasikan, melaporkan, mengevaluasi dan
+                                mempertanggungjawabkan kebijakan teknis pelaksanaan urusan pemerintahan daerah
+                                berdasarkan asas otonomi dan tugas pembantuan di bidang perencanaan pembangunan
+                                daerah</p>
+                    </p>
+                    <p>
+                        <span class="text-subtitle text-fat">DANCE SANGKEK, SH.MM</span>
+                        <br>
+                        <span class="text-thin text-xxl">Kepala BAPPEDA Prov. Papua Barat</span>
+                    </p>
+                </blockquote>
+            </div>
+            <div class="col-lg-4 d-none d-lg-block">
+                <img src="Image/Photo/Ketua Bappeda.png" width="400" height="500" alt="Kepala-Bappeda">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="row row-auto-cols">
+        <div class="col mb-4">
+            <img
+                src="./Image/Logo/logo-e-planning.png"
+                class="img-fluid pt-2 pb-2"
+                alt="...">
+        </div>
+        <div class="col mb-4">
+            <img src="./Image/Logo/logo-krisna.png" class="img-fluid pt-2 pb-2" alt="...">
+
+        </div>
+        <div class="col mb-4">
+            <img src="./Image/Logo/logo-saik.png" class="img-fluid pt-2 pb-2" alt="...">
+
+        </div>
+    </div>
+</div>
+</div>
+<div class="container">
+<div class="featurette-divider">
+    <div class="text-hr-title">
+        <span class="text-fat text-bold" style="font-size: 36px">Info Grafis</span>,
+        <span class="text-thin" style="font-size: 36px">Galeri, Foto &amp; Video</span></div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+    <div class=".col-md-10 .offset-md-2">
+        <div
+            class="swiper mySwiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+            <div
+                class="swiper-wrapper"
+                id="swiper-wrapper-11ca66c849723d68"
+                aria-live="polite"
+                style="transform: translate3d(0px, 0px, 0px);">
+                <div
+                    class="swiper-slide swiper-slide-active"
+                    role="group"
+                    aria-label="1 / 10"
+                    style="width: 183.2px; margin-right: 50px;">
+                    <div class="row">
+                        <a data-fslightbox="gallery" href="./Image/Photo/Gallery.jpg">
+                            <img
+                                class="img-post"
+                                src="./Image/Photo/Gallery.jpg"
+                                alt="Penandatangan Naskah Kerjasama Pemerintah Kota Bandung dan Pemerintah Kabupaten Sorong">
+                        </a>
+                        <span class="d-none d-sm-block text-subtitle text-average mt-2">Penandatangan
+                            Naskah Kerjasama Pemerintah Kota Bandung dan Pemerintah Kabupaten Sorong</span>
+                    </div>
+                </div>
+                <div
+                    class="swiper-slide swiper-slide-next"
+                    role="group"
+                    aria-label="2 / 10"
+                    style="width: 183.2px; margin-right: 50px;">
+                    <div class="row">
+                        <a data-fslightbox="gallery" href="./Image/Photo/Gallery2.jpg">
+                            <img
+                                class="img-post"
+                                src="./Image/Photo/Gallery2.jpg"
+                                alt="Kepala Bappeda Papua Barat Jadi Ketua Tim Percepatan Pembangunan Kabupaten Sorong">
+                        </a>
+                        <span class="d-none d-sm-block text-subtitle text-average mt-2">Kepala Bappeda
+                            Papua Barat Jadi Ketua Tim Percepatan Pembangunan Kabupaten Sorong</span>
+                    </div>
+                </div>
+                <div
+                    class="swiper-slide"
+                    role="group"
+                    aria-label="3 / 10"
+                    style="width: 183.2px; margin-right: 50px;">
+                    <div class="row">
+                        <a data-fslightbox="gallery" href="https://www.youtube.com/watch?v=EmSifHekEMs">
+                            <img
+                                class="img-post"
+                                src="./Image/Photo/Gallery3.jpeg"
+                                alt="Pelatihan Penyusunan SKP Bappeda Provinsi Papua Barat">
+                        </a>
+                        <span class="d-none d-sm-block text-subtitle text-average mt-2">Pelatihan Penyusunan SKP Bappeda Provinsi Papua Barat</span>
+                    </div>
+                </div>
+                <div
+                    class="swiper-slide"
+                    role="group"
+                    aria-label="4 / 10"
+                    style="width: 183.2px; margin-right: 50px;">
+                    <div class="row">
+                        <a data-fslightbox="gallery" href="https://www.youtube.com/watch?v=ghlR2PisK80">
+                            <img
+                                class="img-post"
+                                src="./Image/Photo/Gallery4.jpg"
+                                alt="Presentase Pembangunan SPN Provinsi Papua Barat">
+                        </a>
+                        <span class="d-none d-sm-block text-subtitle text-average mt-2">Presentase Pembangunan SPN Provinsi Papua Barat</span>
+                    </div>
+                </div>
+                <div
+                    class="swiper-slide"
+                    role="group"
+                    aria-label="5 / 10"
+                    style="width: 183.2px; margin-right: 50px;">
+                    <div class="row">
+                        <a data-fslightbox="gallery" href="https://www.youtube.com/watch?v=ojioSN1-iR8">
+                            <img class="img-post" src="./Image/Photo/Gallery5.jpg" alt="Info bappeda">
+                        </a>
+                        <span class="d-none d-sm-block text-subtitle text-average mt-2">Info bappeda</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="featurette-divider">
+        <div class="text-hr-title">
+            <span class="text-fat text-bold" style="font-size: 36px">Alamat</span>
+            <span class="text-thin" style="font-size: 36px">Kantor
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <p class="text-subtitle text-average">Jl. Raya Klamono KM 24, Klamasen, Distrik Mariat, Kabupaten Sorong<br>Papua Barat, 98415, +6285715100xxx</p><br>humaskabsor24@gmail.com
+            </div>
+        </div>
+    </div>
+</div>
+<div style="padding: 0px" class="container-fluid">
+<div class="mapouter">
+    <div class="gmap_canvas">
+        <iframe
+            class="gmap_iframe"
+            width="100%"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=BAPPEDA Kabupaten Sorong&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+        <a href="https://www.gachacute.com/">www.gachacute.com</a>
+    </div>
+    <style>
+        .mapouter {
+            position: relative;
+            text-align: right;
+            width: 100%;
+            height: 400px;
+        }
+        .gmap_canvas {
+            overflow: hidden;
+            background: none!important;
+            width: 100%;
+            height: 400px;
+        }
+        .gmap_iframe {
+            height: 400px!important;
+        }
+    </style>
+</div>
+</div>
+</main>
+<footer class="bg-theme">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mt-5">
+                <div class="d-flex">
+                    <div class="flex-shrink-0">
+                        <img src="./Image/Logo/Logo_Bappeda.png" style="width: 50px;height:50px;"></div>
+                    <div class="flex-grow-1">
+                        <a href="Index.html" class="text-logo">
+                            <span class="navbar-nav text-fat text-sm">Badan Perencanaan<br>Pembangunan Daerah</span></a>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <p class="text-thin text-lg text-footer">Copyright © 2022 Badan Perencanaan Pembangunan Daerah<br>All rights reserved</p>
+                </div>
+                <div class="row mt-4">
+                  <a
+                      href="https://play.google.com/store/apps/details?id=com.papuasmart"
+                      target="_blank">
+                      <img
+                          class="img-fluid"
+                          style="max-width:175px"
+                          alt="Temukan di Google Play"
+                          src="/Image/Logo/google-play-badge.png"></a>
+              </div>
+                <div class="row mt-5">
+                  <span>
+                      <a href="https://www.instagram.com/diskominfo_kabsorong/" target="_blank">
+                          <i
+                              style="cursor:pointer;"
+                              class="fa fa-brands fa-instagram fa-2x text-white me-2"></i>
+                      </a>
+                      <a href="https://www.facebook.com/humaskabsor" target="_blank">
+                          <i
+                              style="cursor:pointer;"
+                              class="fa fa-brands fa-facebook fa-2x text-white me-2"></i>
+                      </a>
+                      <a href="https://twitter.com/bappeda_papua" target="_blank">
+                          <i
+                              style="cursor:pointer;"
+                              class="fa fa-brands fa-twitter fa-2x text-white me-2"></i>
+                      </a>
+                      <a
+                          href="https://www.youtube.com/channel/UCBWjtH4IbDCc0Irrd4TIQpw"
+                          target="_blank">
+                          <i
+                              style="cursor:pointer;"
+                              class="fa fa-brands fa-youtube fa-2x text-white me-2"></i>
+                      </a>
+                  </span>
+              </div>
+                <div class="row mt-4">
+                    <div class="col-lg-6"><img src="./Image/Logo/Logo_Bappeda.png" height="100px"></div>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-5">
+                <p class="text-average text-title text-white">Website Komponen</p>
+                <ul>
+                    <li>
+                        <a
+                            class="link-footer text-thin text-xxxl"
+                            href="http://kemendagri.go.id/"
+                            target="_blank">Kemendagri Pusat</a>
+                    </li>
+                    <li>
+                        <a
+                            class="link-footer text-thin text-xxxl"
+                            href="http://setjen.kemendagri.go.id/"
+                            target="_blank">Sekretariat Jenderal</a>
+                    </li>
+                    <li>
+                        <a
+                            class="link-footer text-thin text-xxxl"
+                            href="http://polpum.kemendagri.go.id/"
+                            target="_blank">Ditjen Politik dan Pemerintahan Umum</a>
+                    </li>
+                    <li>
+                        <a
+                            class="link-footer text-thin text-xxxl"
+                            href="http://ditjenbinaadwil.kemendagri.go.id/"
+                            target="_blank">Ditjen Bina Administrasi Kewilayahan</a>
+                    </li>
+                    <li>
+                        <a
+                            class="link-footer text-thin text-xxxl"
+                            href="http://bpsdm.kemendagri.go.id/"
+                            target="_blank">Badan Pengembangan S.D.M</a>
+                    </li>
+                    <li>
+                        <a
+                            class="link-footer text-thin text-xxxl"
+                            href="http://litbang.kemendagri.go.id/"
+                            target="_blank">Badan Penelitian dan Pengembangan</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mt-5">
+                <ul>
+                    <li>
+                        <a
+                            class="link-footer text-thin text-xxxl"
+                            href="http://ipdn.ac.id/"
+                            target="_blank">Institut Pemerintahan Dalam Negeri</a>
+                    </li>
+                    <li>
+                        <a
+                            class="link-footer text-thin text-xxxl"
+                            href="http://otda.kemendagri.go.id/"
+                            target="_blank">Ditjen Otonomi Daerah</a>
+                    </li>
+                    <li>
+                        <a
+                            class="link-footer text-thin text-xxxl"
+                            href="http://binapemdes.kemendagri.go.id/"
+                            target="_blank">Ditjen Bina Pemerintahan Desa</a>
+                    </li>
+                    <li>
+                        <a
+                            class="link-footer text-thin text-xxxl"
+                            href="http://keuda.kemendagri.go.id/"
+                            target="_blank">Ditjen Bina Keuangan Daerah</a>
+                    </li>
+                    <li>
+                        <a
+                            class="link-footer text-thin text-xxxl"
+                            href="https://dukcapil.kemendagri.go.id/"
+                            target="_blank">Ditjen Kependudukan &amp; Pencatatan Sipil</a>
+                    </li>
+                    <li>
+                        <a
+                            class="link-footer text-thin text-xxxl"
+                            href="http://itjen.kemendagri.go.id/"
+                            target="_blank">Inspektorat Jenderal</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="JS/browser-storage-class.min.js"></script>
+<script src="JS/reef.min.js"></script>
+<script src="JS/flyjson.min.js"></script>
+<script src="JS/moment.min.js"></script>
+<script src="JS/webfont.js"></script>
+<script src="JS/base64.min.js"></script>
+<script src="JS/text-obfuscator.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="JS/form-validation.min.js"></script>
+<script src="JS/helper.js"></script>
+<script src="JS/bootstrap.bundle.min.js"></script>
+<script src="JS/sweetalert2.min.js"></script>
+<script>WebFont.load({google:{families:['Rubik:400,500,700','Inter:600,800']}});_ajax('web_api/webmenu',{application_id:2,user_id:'',access:deviceInfo},function(err,res){if(err)return console.log(err);if(res&&res.sts_res==='true'){menu_header.data.allmenu=[...res.data]}});var menu_header=new Reef('#menu_header',{data:{allmenu:[]},template:function(props){var nosql=new FlyJson();var menu=nosql.set(props.allmenu).where('is_internal_url','===',1).where('parent_id','===','0').orderBy('no_urut').exec();return`<ul class="navbar-nav me-auto mb-2 mb-md-0"> 
+                ${menu.map(function(item, index) {
+                    if(item.haschild === 1) {
+                        // search submenu
+                        var nosql = new FlyJson();
+                        var child = nosql.set(props.allmenu).where('parent_id','==',item.menu_id).orderBy('no_urut').exec();
+                        return `<li class="nav-item dropdown text-average text-lg"><a class="nav-link active dropdown-toggle"href="#"id="navbarDropdownMenuLink"role="button"data-bs-toggle="dropdown"aria-expanded="false">${item.menu_name}</a><ul class="dropdown-menu"aria-labelledby="navbarDropdownMenuLink">${child.map(function(item2,index2){return`<li><a class="dropdown-item" href="${(item2.is_internal_url?'/'+item2.url:item2.url)}" ${(item2.is_internal_url?'':'target="_blank"')}>${item2.menu_name}</a></li>`}).join('')}</ul></li>`;
+                    } else {
+                        return `<li class="nav-item"><a class="nav-link active text-average text-lg"href="${(item.is_internal_url?'/'+item.url:item.url)}"${(item.is_internal_url?'':'target="_blank"')}>${item.menu_name}</a></li>`;
+                    }
+                }).join('')}
+            </ul>`}});menu_header.render();_ajax('web_api/openevent',{application_id:2},function(err,res){if(err)return console.log(err);if(res&&res.sts_res==='true'){menu_event.data.detail=[...res.data]}});var menu_event=new Reef('#menu_event',{data:{detail:[]},template:function(props){if(props.detail.length>0){return`<a id="menuevent" class="nav-link text-average text-lg" style="cursor:pointer" title="${props.detail[0].event_name}">
+                    <img class="img-event" src="${props.detail[0].event_image_url}">
+                </a>`}else{return``}}});menu_event.render();function viewEventClick(){clearEvent();var detail=[...menu_event.data.detail];if(detail.length>0){_ajax('web_api/viewevent',{application_id:2,application_version_number:1,access:deviceInfo},function(err,res){if(err)return console.log(err);if(detail[0].is_internal_link){$('#event-preview').attr('src',detail[0].event_image_url);$('#event-title').html(detail[0].event_name);$('#event-desc').html(detail[0].event_description);if(detail[0].event_go_to_url){$('#event-link').html('<a href="'+detail[0].event_go_to_url+'" target="_blank">'+detail[0].event_go_to_url+'</a>')}else{$('#event-link').html('-')}$('#modalEvent').modal('show')}else{location.href=detail[0].event_go_to_url}})}else{console.log('Belum ada event')}}var link_medsos=new Reef('#link_medsos',{data:{list:[]},template:function(props){return`<span>
+              ${props.list.map(function(item, index){
+                return `<a href="${item.medsos_url}"target="_blank"><i style="cursor:pointer;"class="${item.web_icon} fa-2x text-white me-2"></i></a>`;
+              }).join('')}
+            </span>`}});link_medsos.render();_ajax('web_api/openmedsos',{application_id:2},function(err,res){if(err)return console.log(err);if(res&&res.sts_res==='true'){link_medsos.data.list=[...res.data]}});checkSession();function searchPage(){location.href='/pencarian?q='+encodeURIComponent($('#pencarian-halaman').val())}$(function(){$('#pencarian-halaman').on('keypress',function(e){if(e.key==='Enter'){e.preventDefault();location.href='/pencarian?q='+encodeURIComponent($('#pencarian-halaman').val())}})});var menu_event_rendered=0;document.addEventListener('reef:render',function(event){if(event.target.id=='menu_event'&&menu_event_rendered===0){if(menu_event.data.detail.length>0){document.getElementById('menuevent').setAttribute('onclick','viewEventClick()')}menu_event_rendered++}});function clearEvent(){$('#event-preview').attr('src','/assets/img/no-event.png');$('#event-title').html('Tidak ada Event');$('#event-desc').html('Mohon maaf saat ini sedang tidak ada event!');$('#event-link').html('-')}</script> 
+            <script src="./JS/fslightbox.js"></script>
+            <script src="./JS/swiper-bundle.min.js"></script>
+            <script src="./JS/leaflet.min.js"></script>
+            <script>function shortTitle(text,max){if(text.length>max){text=text.substring(0,max);return text+'...'}return text}function loadMap(){_ajax('web_api/openalamatditjenotda',{application_id:2,user_id:"",application_version_number:1,menu_id:"1",access:deviceInfo},function(err,res){if(err)return console.log(err);if(res&&res.sts_res==='true'){$('#alamat_ditjenotda').html(res.data[0].alamat+', '+res.data[0].kokab_name+',<br>'+res.data[0].provinsi_name+', '+res.data[0].kode_pos+', '+res.data[0].nomor_telpon);var latlng=[res.data[0].alamat_latitude,res.data[0].alamat_longitude],zoom=16,map=L.map('map').setView(latlng,zoom);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);L.marker(latlng).addTo(map).bindPopup('Direktorat Jenderal Otonomi Daerah').openPopup()}})}function loadBanner(){_ajax('mobile_api/openbanner',{application_id:2,banner_page_id:1},function(err,res){if(err)return console.log(err);if(res&&res.sts_res==='true'){menu_banner.data.list=[...res.data]}})}var menu_banner=new Reef('#menu_banner',{data:{list:[]},template:function(props){return`
+              <div id="myCarousel" class="carousel slide d-none d-lg-block" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          ${props.list.map(function(item, index) {
+            return `<button type="button"data-bs-target="#myCarousel"data-bs-slide-to="${index}"class="active"aria-current="true"aria-label="Slide ${index+1}"></button>`;
+          }).join('')}
+        </div>
+ <div class="carousel-inner">
+  <div class="carousel-item ${(index2 === 0?'active':'')}">
+<img class="bd-placeholder-img" src="./Image/News/Berita_Beranda.jpg">
+    <div class="container">
+       </div>
+         </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>`}});menu_banner.render();function loadLayanan(){_ajax('web_api/openmenulayanan',{application_id:2,user_id:""},function(err,res){if(err)return console.log(err);if(res&&res.sts_res==='true'){menu_layanan.data.list=[...res.data]}})}var menu_layanan=new Reef('#menu_layanan',{data:{list:[]},template:function(props){return`
+        <ul class="brands">
+        ${props.list.map(function(item, index){
+          return `<li class="brands__item">
+            <a href="${item.go_to_url}"${(item.is_internal_url?'':'target="_blank"')}title="${item.layanan_name}">
+              <img src="${item.image_url}"alt="${item.layanan_name}"/></a></li>`;
+        }).join('')}
+      </ul> `}});menu_layanan.render();function loadNews(){_ajax('web_api/opennews',{application_id:2,keywords:"",page:1,row_per_page:5},function(err,res){if(err)return console.log(err);if(res&&res.sts_res==='true'){menu_news.data.list=[...res.data]}})}var menu_news=new Reef('#menu_news',{data:{list:[]},template:function(props){return`<div class="row featurette">
+        <div class="col-md-7 order-md-1 mb-4">
+        ${props.list.map(function(item, index){
+        if(index === 0) {
+          return `<div class="img-container"><a href="/berita/${item.news_id}/${slugify(item.news_title)}"><img class="img-fluid"src="${(item.featured_images.length>0?item.featured_images[0].image_url:'/assets/img/breaking-news.jpg')}"alt="${item.news_title}"></a><div class="content"><h3 class="text-title text-fat"><a class="feature-link"href="/berita/${item.news_id}/${slugify(item.news_title)}">${item.news_title}</a></h3><span class="text-subtitle text-thin">${moment(item.date_created).format('DD MMMM YYYY, HH:mm')}</span><br><p class="text-lg text-thin">${shortDescription(striptag(item.news_contents))}<span class="text-lg text-fat ms-2"><a class="text-white"href="/berita/${item.news_id}/${slugify(item.news_title)}">Selengkapnya</a></span></p></div></div>`;
+        }
+      }).join('')}
+        </div>
+        <div class="col-md-5 order-md-2">
+        ${props.list.map(function(item, index){
+          if(index > 0) {
+            return `<div class="d-flex mb-4"><div class="flex-shrink-0"><a href="/berita/${item.news_id}/${slugify(item.news_title)}"><img class="img-post"src="${(item.featured_images.length>0?item.featured_images[0].image_url:'/assets/img/breaking-news.jpg')}"alt="${item.news_title}"></a></div><div class="flex-grow-1 ms-3"><span class="text-subtitle text-average"><a class="post-link"href="/berita/${item.news_id}/${slugify(item.news_title)}">${item.news_title}</a></span><br><span class="text-sm text-thin">${moment(item.date_created).format('DD MMMM YYYY, HH:mm')}</span><br><p class="text-thin text-lg mt-1">${shortDescription(striptag(item.news_contents))}</p></div></div>`;
+          }
+        }).join('')}
+          <div class="d-grid mb-4">
+            <a href="/berita" class="btn btn-outline-primary text-lg">Lihat Semua Berita</a>
+          </div>
+        </div>
+      </div>`}});menu_news.render();function loadGaleri(){_ajax('web_api/opengalerifotodanvideo',{application_id:2,user_id:"",application_version_number:1,menu_id:"90",access:deviceInfo},function(err,res){if(err)return console.log(err);if(res&&res.sts_res==='true'){var nosql=new FlyJson();var result=nosql.set(res.data).take(10).exec();galeri.data.list=[...result]}})}var galeri=new Reef('#galeri',{data:{list:[]},template:function(props){return`<div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+        ${props.list.map(function(item, index) {
+        return `<div class="swiper-slide"><div class="row"><a data-fslightbox="gallery"href="${item.galeri_video_url}"><img class="img-post"onerror="/assets/img/thumb-video.jpg"src="${(item.is_foto_or_video === 1?item.galeri_video_url:item.galeri_thumbnail)}"alt="${item.galeri_video_caption}"></a><span class="d-none d-sm-block text-subtitle text-average mt-2">${shortTitle(item.galeri_video_caption,50)}</span></div></div>`;
+        }).join('')}
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>`}});galeri.render();function loadJargon(){_ajax('web_api/openlogohits',{application_id:2},function(err,res){if(err)return console.log(err);if(res&&res.sts_res==='true'){jargon.data.list=[...res.data]}})}var jargon=new Reef('#jargon',{data:{list:[]},template:function(props){if(props.list.length>0){return`<div class="container mt-5">
+          <div class="row row-auto-cols">
+            <div class="col mb-4">
+              <img src="${props.list[0].logo_hits_image_url_001}" class="img-fluid pt-2 pb-2" style="height: 200px !important;" alt="...">
+              
+            </div>
+            <div class="col mb-4">
+              <img src="${props.list[0].logo_hits_image_url_002}" class="img-fluid pt-2 pb-2" style="height: 200px !important;" alt="...">
+              
+            </div>
+            <div class="col mb-4">
+              <img src="${props.list[0].logo_hits_image_url_003}" class="img-fluid pt-2 pb-2" style="height: 200px !important;" alt="...">
+              
+            </div>
+          </div>
+        </div>`}else{return``}}});jargon.render();document.addEventListener('reef:render',function(event){if(event.target.id==='galeri'){refreshFsLightbox();var swiper=new Swiper(".mySwiper",{slidesPerView:5,spaceBetween:30,pagination:{el:".swiper-pagination",clickable:true,},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev",},breakpoints:{640:{slidesPerView:2,spaceBetween:20,},768:{slidesPerView:4,spaceBetween:40,},1024:{slidesPerView:5,spaceBetween:50,},}})}});loadBanner();loadMap();loadGaleri();loadLayanan();loadNews();loadJargon();
+        </script>
+        </body>
+        </html>
